@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация — Иван Dev</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Иван <span>Dev</span></div>
+    <nav class="main-nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="contacts.html">Контакты</a>
+      <a href="login.html">Вход</a>
+    </nav>
+  </header>
+
+  <main>
+    <form class="form-box" id="registerForm" novalidate>
+      <h2 style="text-align:center;margin-bottom:8px">Регистрация</h2>
+      <p class="form-subtitle">Создайте аккаунт, чтобы отслеживать заказы и переписку</p>
+
+      <label for="name">Имя</label>
+      <input type="text" id="name" name="name" placeholder="Иван" autocomplete="name">
+      <span class="field-error" data-for="name"></span>
+
+      <label for="login">Логин</label>
+      <input type="text" id="login" name="login" placeholder="Логин">
+      <span class="field-error" data-for="login"></span>
+
+      <label for="password">Пароль</label>
+      <input type="password" id="password" name="password" placeholder="Минимум 8 символов" autocomplete="new-password">
+      <span class="field-error" data-for="password"></span>
+
+      <label for="password2">Повторите пароль</label>
+      <input type="password" id="password2" name="password2" placeholder="••••••••" autocomplete="new-password">
+
+      <button type="submit" class="btn" style="margin-top:8px">Создать аккаунт</button>
+
+      <p class="hint">Уже есть аккаунт? <a href="login.html">Войти</a></p>
+    </form>
+  </main>
+
+  <aside class="sidebar">
+    <h4>Услуги</h4>
+    <nav>
+      <a href="service-games.html">🎮 Разработка игр</a>
+      <a href="service-websites.html">🌐 Разработка сайтов</a>
+      <a href="service-bots.html">🤖 Разработка ботов</a>
+      <a href="service-consulting.html">💡 Консультирование</a>
+    </nav>
+    <div class="about-mini">
+      <strong>Иван Петров</strong>
+      Fullstack-разработчик, 7 лет опыта. Москва.
+    </div>
+  </aside>
+
+  <button class="chat-fab" id="chatFab">💬</button>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">ИИ-помощник <button id="chatClose">×</button></div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">Здравствуйте! Помогу с регистрацией. Если что-то непонятно — спрашивайте.</div>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <input type="text" id="chatInput" placeholder="Ваш вопрос..." autocomplete="off">
+      <button type="submit">➤</button>
+    </form>
+  </div>
+
+  <script src="js/chat.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

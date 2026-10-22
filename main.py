@@ -8,6 +8,11 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/register")
+def register():
+    return render_template("register.html")
+
+
 @app.route("/products", methods=["GET"])
 def products():
     return "Продукты"
@@ -16,6 +21,11 @@ def products():
 @app.route("/info", methods=["GET"])
 def info():
     return "Дополнительнвя информация"
+
+
+@app.errorhandler(404)
+def error_404(error):
+    return render_template("404.html"), 404
 
 
 if __name__ == '__main__':
