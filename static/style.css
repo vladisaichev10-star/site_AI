@@ -287,3 +287,63 @@ aside.sidebar .about-mini strong { color: var(--text); display: block; margin-bo
   from { transform: translateX(120%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
+
+/* ---------- Страница 500 ---------- */
+.error-code-500 {
+  background: linear-gradient(135deg, #ff5c5c, #ffb020);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.error-details {
+  text-align: left;
+  max-width: 420px;
+  margin: 0 auto;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.error-details strong {
+  color: var(--text);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.error-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.error-details li {
+  padding: 6px 0 6px 20px;
+  position: relative;
+}
+
+.error-details li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.error-details a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.error-details a:hover {
+  text-decoration: underline;
+}

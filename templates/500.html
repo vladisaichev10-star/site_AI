@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>500 — Внутренняя ошибка сервера | Иван Dev</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Иван <span>Dev</span></div>
+    <nav class="main-nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="contacts.html">Контакты</a>
+      <a href="login.html">Вход</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="error-box">
+      <div class="error-code error-code-500">500</div>
+      <h1>Внутренняя ошибка сервера</h1>
+      <p class="lead" style="margin: 16px auto 32px">
+        Что-то сломалось на нашей стороне. Мы уже чиним. Попробуйте обновить страницу
+        через минуту — обычно проблема быстро решается.
+      </p>
+
+      <div class="error-actions">
+        <button class="btn" onclick="location.reload()">🔄 Обновить страницу</button>
+        <a href="index.html" class="btn secondary">На главную</a>
+        <a href="contacts.html" class="btn secondary">Сообщить о проблеме</a>
+      </div>
+
+      <div class="error-details">
+        <p><strong>Что можно сделать:</strong></p>
+        <ul>
+          <li>Подождать 1–2 минуты и обновить страницу</li>
+          <li>Проверить соединение с интернетом</li>
+          <li>Написать мне: <a href="mailto:hello@example.com">hello@example.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <aside class="sidebar">
+    <h4>Услуги</h4>
+    <nav>
+      <a href="service-games.html">🎮 Разработка игр</a>
+      <a href="service-websites.html">🌐 Разработка сайтов</a>
+      <a href="service-bots.html">🤖 Разработка ботов</a>
+      <a href="service-consulting.html">💡 Консультирование</a>
+    </nav>
+    <div class="about-mini">
+      <strong>Иван Петров</strong>
+      Fullstack-разработчик, 7 лет опыта. Москва.
+    </div>
+  </aside>
+
+  <button class="chat-fab" id="chatFab">💬</button>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">ИИ-помощник <button id="chatClose">×</button></div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">Здравствуйте! Похоже, сервер прилёг отдохнуть 😅 Если ошибка повторяется — напишите мне, разберусь.</div>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <input type="text" id="chatInput" placeholder="Ваш вопрос..." autocomplete="off">
+      <button type="submit">➤</button>
+    </form>
+  </div>
+  <script src="js/chat.js"></script>
+</body>
+</html>
