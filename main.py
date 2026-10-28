@@ -3,7 +3,7 @@
 """
 from typing import Optional
 
-from flask import render_template, request
+from flask import render_template, request, flash, redirect
 from config import app, login_manager
 from database.models import User
 
@@ -39,6 +39,8 @@ def register() -> str:
         password2 = request.form.get("password2")
 
         if len(password) <= 8:
+            flash(message="Пароль не должен меньше 8 символов", category="error")
+            redirect("/register")
 
 
 
