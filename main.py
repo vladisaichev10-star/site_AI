@@ -32,8 +32,17 @@ def register() -> str:
     """
     # TODO: получить данные и вывести на экран
 
-    print(request.method)
-    print(request.form.get("name"))
+    if request.method == "POST":
+        name = request.form.get("name")
+        login = request.form.get("login")
+        password = request.form.get("password")
+        password2 = request.form.get("password2")
+
+        if len(password) <= 8:
+
+
+
+
     return render_template("register.html")
 
 
