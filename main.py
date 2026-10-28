@@ -3,6 +3,8 @@
 """
 from typing import Optional
 
+from database import create_tables, create_user
+
 from flask import render_template, request, flash, redirect
 from config import app, login_manager
 from database.models import User
@@ -42,8 +44,20 @@ def register() -> str:
             flash(message="Пароль не должен меньше 8 символов", category="error")
             redirect("/register")
 
+        if len(name) <= 3:
+            flash(message="Имя не должно быть менее 3 символов")
 
 
+
+
+
+
+
+
+
+
+
+    create_user()
 
     return render_template("register.html")
 
@@ -81,4 +95,5 @@ def error_500(error: Exception) -> tuple[str, int]:
 
 
 if __name__ == "__main__":
+    create_tables()
     app.run()
