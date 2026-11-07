@@ -10,6 +10,7 @@ from config import app, login_manager
 from database.models import User
 from validation import valid
 
+
 @login_manager.user_loader
 def load_user(user_id: str) -> Optional[User]:
     """
@@ -33,8 +34,17 @@ def register() -> str:
     Обрабатывает страницу регистрации пользователя.
     """
     # TODO: получить данные и вывести на экран
+    if request.method == "POST":
+        name = request.form.get("name")
+        login = request.form.get("login")
+        password = request.form.get("password")
+        password2 = request.form.get("password2")
 
-    valid()
+        valid(name=name, login=login, password=password, password2=password)
+        redirect("/register")
+        create_user(username=login, password=password)
+    else:
+        return render_template("register.html")
 
 
 @app.route("/products", methods=["GET"])
