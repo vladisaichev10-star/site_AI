@@ -37,6 +37,7 @@ class User(UserMixin, BaseModel):
     """
 
     username = CharField(unique=True, max_length=25, index=True, null=False)
+    login = CharField(unique=True, max_length=255, index=True, null=False)
     password_hash = CharField(max_length=255, null=False)
     created_at = DateTimeField(default=datetime.now)
 

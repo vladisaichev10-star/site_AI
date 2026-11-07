@@ -8,7 +8,7 @@ from database import create_tables, create_user
 from flask import render_template, request, flash, redirect
 from config import app, login_manager
 from database.models import User
-
+from validation import valid
 
 @login_manager.user_loader
 def load_user(user_id: str) -> Optional[User]:
@@ -34,32 +34,7 @@ def register() -> str:
     """
     # TODO: получить данные и вывести на экран
 
-    if request.method == "POST":
-        name = request.form.get("name")
-        login = request.form.get("login")
-        password = request.form.get("password")
-        password2 = request.form.get("password2")
-
-        if len(password) <= 8:
-            flash(message="Пароль не должен меньше 8 символов", category="error")
-            redirect("/register")
-
-        if len(name) <= 3:
-            flash(message="Имя не должно быть менее 3 символов")
-
-
-
-
-
-
-
-
-
-
-
-    create_user()
-
-    return render_template("register.html")
+    valid()
 
 
 @app.route("/products", methods=["GET"])
