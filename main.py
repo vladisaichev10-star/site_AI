@@ -40,15 +40,16 @@ def register() -> str:
         password2 = request.form.get("password2")
 
 
-        is_valid = valid(name=name, password=password, password2=password)
+        is_valid = valid(name=name, password=password, password2=password2)
 
         if is_valid:
-            create_user(name=name, password=password)
+            print(is_valid)
+            create_user(username=name, password=password)
             flash(message="Успешная регистрация", category="success-toast")
-            redirect("/")
+            return redirect("/")
         else:
             flash("Поля заполненны не верно")
-            redirect("/register")
+            return redirect("/register")
     else:
         return render_template("register.html")
 
