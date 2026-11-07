@@ -347,3 +347,70 @@ aside.sidebar .about-mini strong { color: var(--text); display: block; margin-bo
 .error-details a:hover {
   text-decoration: underline;
 }
+
+/* ---------- Форма входа ---------- */
+.password-wrap {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.password-wrap input {
+  margin-bottom: 0;
+  padding-right: 48px;
+}
+
+.toggle-pass {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: color .2s, background .2s;
+}
+
+.toggle-pass:hover {
+  color: var(--text);
+  background: #232a38;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.forgot-link {
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Тост для ошибки входа */
+.error-toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: #341212;
+  border: 1px solid #ff5c5c;
+  color: #ffb8b8;
+  padding: 16px 22px;
+  border-radius: 12px;
+  font-size: 14px;
+  z-index: 2000;
+  animation: slideIn .3s ease;
+  max-width: 320px;
+}

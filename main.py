@@ -41,7 +41,6 @@ def register() -> str:
 
 
         is_valid = valid(name=name, password=password, password2=password2)
-        print(is_valid)
 
         if is_valid:
             create_user(username=name, password=password)
@@ -68,6 +67,17 @@ def info() -> str:
     Возвращает страницу с дополнительной информацией.
     """
     return "Дополнительная информация"
+
+@app.route("/login", methods=["GET", "POST"])
+def login() -> str:
+    """
+    Возвращает страницу с авторизацией.
+    """
+
+    if request.method == "POST":
+
+
+    return render_template("/login")
 
 
 @app.errorhandler(404)

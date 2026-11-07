@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход — Иван Dev</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Иван <span>Dev</span></div>
+    <nav class="main-nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="contacts.html">Контакты</a>
+      <a href="login.html" class="active">Вход</a>
+    </nav>
+  </header>
+
+  <main>
+    <form class="form-box" id="loginForm" novalidate>
+      <h2 style="text-align:center;margin-bottom:8px">Вход</h2>
+      <p class="form-subtitle">Войдите в аккаунт по логину и паролю</p>
+
+      <label for="login">Логин</label>
+      <input type="text" id="login" name="login" placeholder="Ваш логин" autocomplete="username">
+      <span class="field-error" data-for="login"></span>
+
+      <label for="password">Пароль</label>
+      <div class="password-wrap">
+        <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password">
+        <button type="button" class="toggle-pass" id="togglePass" aria-label="Показать пароль">👁</button>
+      </div>
+      <span class="field-error" data-for="password"></span>
+
+      <div class="form-row">
+        <label class="checkbox-label" style="margin:0">
+          <input type="checkbox" id="remember" name="remember">
+          <span>Запомнить меня</span>
+        </label>
+        <a href="#" class="forgot-link" onclick="event.preventDefault(); alert('Демо: восстановление пароля не подключено')">Забыли пароль?</a>
+      </div>
+
+      <button type="submit" class="btn" style="margin-top:20px">Войти</button>
+
+      <p class="hint">Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+    </form>
+  </main>
+
+  <aside class="sidebar">
+    <h4>Услуги</h4>
+    <nav>
+      <a href="service-games.html">🎮 Разработка игр</a>
+      <a href="service-websites.html">🌐 Разработка сайтов</a>
+      <a href="service-bots.html">🤖 Разработка ботов</a>
+      <a href="service-consulting.html">💡 Консультирование</a>
+    </nav>
+    <div class="about-mini">
+      <strong>Иван Петров</strong>
+      Fullstack-разработчик, 7 лет опыта. Москва.
+    </div>
+  </aside>
+
+  <button class="chat-fab" id="chatFab">💬</button>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">ИИ-помощник <button id="chatClose">×</button></div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">Здравствуйте! Помогу со входом. Если забыли пароль — подскажу, что делать.</div>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <input type="text" id="chatInput" placeholder="Ваш вопрос..." autocomplete="off">
+      <button type="submit">➤</button>
+    </form>
+  </div>
+
+  <script src="js/chat.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
