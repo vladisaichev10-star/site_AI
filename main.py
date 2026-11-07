@@ -41,9 +41,9 @@ def register() -> str:
 
 
         is_valid = valid(name=name, password=password, password2=password2)
+        print(is_valid)
 
         if is_valid:
-            print(is_valid)
             create_user(username=name, password=password)
             flash(message="Успешная регистрация", category="success-toast")
             return redirect("/")
