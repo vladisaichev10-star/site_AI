@@ -11,3 +11,4 @@ def valid(name, password, password2) -> bool:
         return False
 
     return True
+

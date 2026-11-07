@@ -36,13 +36,19 @@ def register() -> str:
     # TODO: получить данные и вывести на экран
     if request.method == "POST":
         name = request.form.get("name")
-        login = request.form.get("login")
         password = request.form.get("password")
         password2 = request.form.get("password2")
 
-        valid(name=name, login=login, password=password, password2=password)
-        redirect("/register")
-        create_user(username=login, password=password)
+
+        is_valid = valid(name=name, password=password, password2=password)
+
+        if is_valid:
+            create_user(name=name, password=password)
+            flash(message="Успешная регистрация", category="success-toast")
+            redirect("/")
+        else:
+            flash("Поля заполненны не верно")
+            redirect("/register")
     else:
         return render_template("register.html")
 

@@ -19,6 +19,19 @@
   </header>
 
   <main>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+
+        {% for category, message in messages %}
+          <div class="{{category}}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+
     <section class="hero">
       <h1>Разрабатываю игры, сайты и ботов под ключ</h1>
       <p class="lead">7 лет в разработке. Помогу от идеи до релиза. Быстро, чисто, с документацией.</p>
