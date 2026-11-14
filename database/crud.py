@@ -4,7 +4,7 @@ from .models import User
 
 
 
-def create_user(username: str, password: str) -> User:
+def create_user(login: str, password: str) -> User:
     """
     Создание пользователя
 
@@ -12,7 +12,7 @@ def create_user(username: str, password: str) -> User:
     :param password:
     :return:
     """
-    user = User(username=username)
+    user = User(login=login)
     user.set_password(password=password)
 
     user.save()
@@ -22,4 +22,9 @@ def create_tables():
     db.connect()
 
     db.create_tables([User])
+
+def get_user(login: str):
+    user = User.get_or_none(User.login == login)
+    print(user)
+    return user
 

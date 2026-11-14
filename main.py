@@ -33,17 +33,16 @@ def register() -> str:
     """
     Обрабатывает страницу регистрации пользователя.
     """
-    # TODO: получить данные и вывести на экран
     if request.method == "POST":
-        name = request.form.get("name")
+        login = request.form.get("login")
         password = request.form.get("password")
         password2 = request.form.get("password2")
 
 
-        is_valid = valid(name=name, password=password, password2=password2)
+        is_valid = valid(login=login, password=password, password2=password2)
 
         if is_valid:
-            create_user(username=name, password=password)
+            create_user(login=login, password=password)
             flash(message="Успешная регистрация", category="success-toast")
             return redirect("/")
         else:
@@ -74,10 +73,20 @@ def login() -> str:
     Возвращает страницу с авторизацией.
     """
 
+    if request.method == "GET":
+
+        return render_template("login.html")
     if request.method == "POST":
+        login = (request.form.get("login") or "").strip()
+        password = (request.form.get("password") or "").strip()
 
 
-    return render_template("/login")
+        if not login or not password:
+            flash("Введите логин или пароль", category="login_toast")
+            return redirect("/login")
+
+        flash("Вы вошли в систему", category="success-toast")
+        return redirect("/")
 
 
 @app.errorhandler(404)
