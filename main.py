@@ -7,7 +7,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 from database import create_tables, create_user
 
-from flask import render_template, request, flash, redirect
+from flask import render_template, request, flash, redirect, url_for
 from config import app, login_manager
 from database.crud import get_user
 from database.models import User
@@ -112,10 +112,16 @@ def login() -> str:
         return redirect("/")
 
 
-
+@app.route("/logout")
 def logout():
-    pass
-    # logout_user(user)
+    login = current_user.login
+    logout_user()
+    flash()
+    app.logger.info(f"sadas {login}")
+
+
+    return redirect("/login")
+
 
 
 @app.errorhandler(404)
