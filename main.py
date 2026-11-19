@@ -3,7 +3,7 @@
 """
 from typing import Optional
 
-from flask_login import login_user, login_required
+from flask_login import login_user, login_required, logout_user, current_user
 
 from database import create_tables, create_user
 
@@ -110,6 +110,12 @@ def login() -> str:
 
         flash("Вы вошли в систему", category="success-toast")
         return redirect("/")
+
+
+
+def logout():
+    pass
+    # logout_user(user)
 
 
 @app.errorhandler(404)
