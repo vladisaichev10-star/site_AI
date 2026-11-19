@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Товар — Иван Dev</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Иван <span>Dev</span></div>
+    <nav class="main-nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html" class="active">Услуги</a>
+      <a href="contacts.html">Контакты</a>
+      <a href="login.html">Вход</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs">
+      <a href="index.html">Главная</a> <span>/</span>
+      <a href="services.html">Услуги</a> <span>/</span>
+      <span id="crumbCurrent">Товар</span>
+    </nav>
+
+    <!-- Карточка товара -->
+    <div class="product-layout">
+      <div class="product-media" id="productMedia">🎮</div>
+
+      <div class="product-info">
+        <span class="tag" id="productTag">Unity · Godot</span>
+        <h1 id="productTitle">Разработка игр</h1>
+        <p class="lead" id="productDesc">Описание услуги.</p>
+
+        <div class="product-price" id="productPrice">от 50 000 ₽</div>
+
+        <!-- Выбор пакета -->
+        <h3 style="margin-top:24px">Выберите пакет</h3>
+        <div class="package-list" id="packageList"><!-- JS --></div>
+
+        <div class="product-actions">
+          <button class="btn" id="orderBtn">Заказать пакет</button>
+          <a href="contacts.html" class="btn secondary">Задать вопрос</a>
+        </div>
+
+        <ul class="product-features" id="productFeatures"><!-- JS --></ul>
+      </div>
+    </div>
+
+    <!-- Таблица характеристик -->
+    <section style="margin-top:64px">
+      <h2>Что входит в работу</h2>
+      <div class="compare-table-wrap">
+        <table class="compare-table" id="specTable">
+          <tbody><!-- JS --></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <h2>Частые вопросы</h2>
+      <div class="faq">
+        <details>
+          <summary>Как происходит оплата?</summary>
+          <p>50% предоплата, 50% — после сдачи проекта. Работаю по договору или самозанятости.</p>
+        </details>
+        <details>
+          <summary>Что если нужно внести правки?</summary>
+          <p>Два круга правок входят в стоимость. Дальше — по часовой ставке.</p>
+        </details>
+        <details>
+          <summary>Работаете ли вы с чужим кодом?</summary>
+          <p>Да, беру проекты на доработку. Сначала провожу аудит — бесплатно оцениваю объём.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <aside class="sidebar">
+    <h4>Услуги</h4>
+    <nav>
+      <a href="product.html?service=games">🎮 Разработка игр</a>
+      <a href="product.html?service=websites">🌐 Разработка сайтов</a>
+      <a href="product.html?service=bots">🤖 Разработка ботов</a>
+      <a href="product.html?service=consulting">💡 Консультирование</a>
+    </nav>
+    <div class="about-mini">
+      <strong>Иван Петров</strong>
+      Fullstack-разработчик, 7 лет опыта. Москва.
+    </div>
+  </aside>
+
+  <button class="chat-fab" id="chatFab">💬</button>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">ИИ-помощник <button id="chatClose">×</button></div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">Здравствуйте! Помогу выбрать пакет и отвечу на вопросы по услуге.</div>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <input type="text" id="chatInput" placeholder="Ваш вопрос..." autocomplete="off">
+      <button type="submit">➤</button>
+    </form>
+  </div>
+
+  <script src="js/chat.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Услуги — Иван Dev</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Иван <span>Dev</span></div>
+    <nav class="main-nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html" class="active">Услуги</a>
+      <a href="contacts.html">Контакты</a>
+      <a href="login.html">Вход</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Услуги</h1>
+    <p class="lead" style="margin-bottom:36px">
+      Выберите направление — внутри есть готовые пакеты с ценами и сроками.
+      Не нашли подходящее? <a href="contacts.html" style="color:var(--accent)">Напишите мне</a>.
+    </p>
+
+    <div class="grid">
+      <!-- 1 -->
+      <div class="card service-card">
+        <div class="thumb">🎮</div>
+        <span class="tag">Unity · Godot</span>
+        <h3>Разработка игр</h3>
+        <p>Прототипы, MVP и полные игры под ключ — от механики до релиза в Steam и мобильных сторах.</p>
+        <div class="price">от 50 000 ₽</div>
+        <a href="product.html?service=games" class="btn service-btn">Смотреть пакеты →</a>
+      </div>
+
+      <!-- 2 -->
+      <div class="card service-card">
+        <div class="thumb">🌐</div>
+        <span class="tag">Next.js · React</span>
+        <h3>Разработка сайтов</h3>
+        <p>Лендинги, интернет-магазины, веб-приложения. Адаптив, SEO, быстрый старт.</p>
+        <div class="price">от 30 000 ₽</div>
+        <a href="product.html?service=websites" class="btn service-btn">Смотреть пакеты →</a>
+      </div>
+
+      <!-- 3 -->
+      <div class="card service-card">
+        <div class="thumb">🤖</div>
+        <span class="tag">Python · Aiogram</span>
+        <h3>Разработка ботов</h3>
+        <p>Telegram, Discord, WhatsApp — с оплатой, админкой и уведомлениями.</p>
+        <div class="price">от 15 000 ₽</div>
+        <a href="product.html?service=bots" class="btn service-btn">Смотреть пакеты →</a>
+      </div>
+
+      <!-- 4 -->
+      <div class="card service-card">
+        <div class="thumb">💡</div>
+        <span class="tag">Аудит · Менторство</span>
+        <h3>Консультирование</h3>
+        <p>Аудит кода, архитектура, выбор стека, менторство и разбор задач.</p>
+        <div class="price">от 3 000 ₽/час</div>
+        <a href="product.html?service=consulting" class="btn service-btn">Смотреть пакеты →</a>
+      </div>
+    </div>
+
+    <!-- Сравнительная таблица -->
+    <section style="margin-top:64px">
+      <h2>Сравнение направлений</h2>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Услуга</th>
+              <th>Сроки</th>
+              <th>Цена от</th>
+              <th>Что входит</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🎮 Игры</td>
+              <td>1–3 мес.</td>
+              <td>50 000 ₽</td>
+              <td>ГДД, код, ассеты, релиз</td>
+            </tr>
+            <tr>
+              <td>🌐 Сайты</td>
+              <td>2–4 нед.</td>
+              <td>30 000 ₽</td>
+              <td>Дизайн, вёрстка, SEO</td>
+            </tr>
+            <tr>
+              <td>🤖 Боты</td>
+              <td>1–2 нед.</td>
+              <td>15 000 ₽</td>
+              <td>Логика, оплата, админка</td>
+            </tr>
+            <tr>
+              <td>💡 Консалтинг</td>
+              <td>1 час</td>
+              <td>3 000 ₽</td>
+              <td>Разбор, рекомендации</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <aside class="sidebar">
+    <h4>Услуги</h4>
+    <nav>
+      <a href="product.html?service=games">🎮 Разработка игр</a>
+      <a href="product.html?service=websites">🌐 Разработка сайтов</a>
+      <a href="product.html?service=bots">🤖 Разработка ботов</a>
+      <a href="product.html?service=consulting">💡 Консультирование</a>
+    </nav>
+    <div class="about-mini">
+      <strong>Иван Петров</strong>
+      Fullstack-разработчик, 7 лет опыта. Москва.
+    </div>
+  </aside>
+
+  <button class="chat-fab" id="chatFab">💬</button>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">ИИ-помощник <button id="chatClose">×</button></div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">Здравствуйте! Помогу выбрать услугу и пакет. Что вас интересует?</div>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <input type="text" id="chatInput" placeholder="Ваш вопрос..." autocomplete="off">
+      <button type="submit">➤</button>
+    </form>
+  </div>
+  <script src="js/chat.js"></script>
+</body>
+</html>

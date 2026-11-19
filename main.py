@@ -3,10 +3,13 @@
 """
 from typing import Optional
 
+from flask_login import login_user
+
 from database import create_tables, create_user
 
 from flask import render_template, request, flash, redirect
 from config import app, login_manager
+from database.crud import get_user
 from database.models import User
 from validation import valid
 
@@ -18,6 +21,7 @@ def load_user(user_id: str) -> Optional[User]:
     """
     user: Optional[User] = User.get_or_none(User.id == int(user_id))
     return user
+
 
 
 @app.route("/")
@@ -52,12 +56,18 @@ def register() -> str:
         return render_template("register.html")
 
 
-@app.route("/products", methods=["GET"])
-def products() -> str:
+@app.route("/services", methods=["GET"])
+def services() -> str:
     """
     Возвращает страницу со списком продуктов.
     """
-    return "Продукты"
+    return render_template("services.html")
+
+@app.route("/product", methods=["GET"])
+def product() -> str:
+
+
+    return render_template("product.html")
 
 
 @app.route("/info", methods=["GET"])
@@ -74,8 +84,8 @@ def login() -> str:
     """
 
     if request.method == "GET":
-
         return render_template("login.html")
+
     if request.method == "POST":
         login = (request.form.get("login") or "").strip()
         password = (request.form.get("password") or "").strip()
@@ -84,6 +94,18 @@ def login() -> str:
         if not login or not password:
             flash("Введите логин или пароль", category="login_toast")
             return redirect("/login")
+
+        user = get_user(login=login)
+        print(user)
+        if user is None:
+            flash(message="Пользователь не найден", category="login_toast")
+            return redirect("/login")
+
+        if not user.check_password(password=password):
+            flash(message="Пароли не совпадают", category="login_toast")
+            return redirect("/login")
+
+        login_user(user)
 
         flash("Вы вошли в систему", category="success-toast")
         return redirect("/")
