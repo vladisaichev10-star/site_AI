@@ -3,7 +3,7 @@
 """
 from typing import Optional
 
-from flask_login import login_user
+from flask_login import login_user, login_required
 
 from database import create_tables, create_user
 
@@ -71,6 +71,7 @@ def product() -> str:
 
 
 @app.route("/info", methods=["GET"])
+@login_required
 def info() -> str:
     """
     Возвращает страницу с дополнительной информацией.
