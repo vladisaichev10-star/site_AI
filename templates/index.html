@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
+{% block title %}
 
+    {{name}}
+
+{% endblock %}
 {% block content %}
   <main>
 
@@ -87,19 +91,7 @@
     </section>
   </main>
 
-  <aside class="sidebar">
-    <h4>Услуги</h4>
-    <nav>
-      <a href="service-games.html">🎮 Разработка игр</a>
-      <a href="service-websites.html">🌐 Разработка сайтов</a>
-      <a href="service-bots.html">🤖 Разработка ботов</a>
-      <a href="service-consulting.html">💡 Консультирование</a>
-    </nav>
-    <div class="about-mini">
-      <strong>Иван Петров</strong>
-      Fullstack-разработчик, 7 лет опыта. Москва.
-    </div>
-  </aside>
+
 
   <!-- Чат-бота на главной НЕТ по требованию -->
 {% endblock %}

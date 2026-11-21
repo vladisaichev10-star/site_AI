@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Вход — Иван Dev</title>
+  <title>
+    {% block title %}
+
+      Заголовок страницы
+
+    {% endblock %}
+  </title>
   <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">Иван <span>Dev</span></div>
+    <div class="logo">Владислав <span>Dev</span></div>
     <nav class="main-nav">
-      <a href="/index">Главная</a>
+      <a href="/">Главная</a>
       <a href="/services">Услуги</a>
       <a href="/contacts">Контакты</a>
       <a href="/login" class="active">Вход</a>
@@ -19,5 +25,18 @@
 
     {% block content %}
     {% endblock %}
+    <aside class="sidebar">
+    <h4>Услуги</h4>
+    <nav>
+      <a href="service-games.html">🎮 Разработка игр</a>
+      <a href="service-websites.html">🌐 Разработка сайтов</a>
+      <a href="service-bots.html">🤖 Разработка ботов</a>
+      <a href="service-consulting.html">💡 Консультирование</a>
+    </nav>
+    <div class="about-mini">
+      <strong>Иван Петров</strong>
+      Fullstack-разработчик, 7 лет опыта. Москва.
+    </div>
+  </aside>
 </body>
 </html>

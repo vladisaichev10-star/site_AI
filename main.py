@@ -7,7 +7,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 from database import create_tables, create_user
 
-from flask import render_template, request, flash, redirect, url_for
+from flask import render_template, request, flash, redirect
 from config import app, login_manager
 from database.crud import get_user
 from database.models import User
@@ -29,7 +29,7 @@ def index() -> str:
     """
     Отображает главную страницу приложения.
     """
-    return render_template("index.html")
+    return render_template("index.html", name="Главная")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -116,11 +116,10 @@ def login() -> str:
 def logout():
     login = current_user.login
     logout_user()
+    flash(message=f"Вы вышли из системы {login}", category="success-toast")
+    app.logger.info(f"Пользователь вышел {login}")
 
-    app.logger.info(f"sadas {login}")
-
-
-    return redirect("/login")
+    return redirect("/")
 
 
 
