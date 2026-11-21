@@ -116,7 +116,7 @@ def login() -> str:
 def logout():
     login = current_user.login
     logout_user()
-    flash()
+
     app.logger.info(f"sadas {login}")
 
 
