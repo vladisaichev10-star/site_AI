@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Услуги — Иван Dev</title>
-  <link rel="stylesheet" href="static/style.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="logo">Иван <span>Dev</span></div>
-    <nav class="main-nav">
-      <a href="index.html">Главная</a>
-      <a href="services.html" class="active">Услуги</a>
-      <a href="contacts.html">Контакты</a>
-      <a href="login.html">Вход</a>
-    </nav>
-  </header>
+{% extends "base.html" %}
+
+
+{% block content % }
 
   <main>
     <h1>Услуги</h1>
@@ -136,5 +122,4 @@
     </form>
   </div>
   <script src="js/chat.js"></script>
-</body>
-</html>
+{% endblock % }

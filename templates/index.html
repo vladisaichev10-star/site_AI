@@ -1,24 +1,7 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Иван Петров — разработка игр, сайтов и ботов</title>
-  <link rel="stylesheet" href="static/style.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="logo">Иван <span>Dev</span></div>
-    <nav class="main-nav">
-      <a href="index.html" class="active">Главная</a>
-      <a href="services.html">Услуги</a>
-      <a href="contacts.html">Контакты</a>
-      <a href="/login">Вход</a>
-      <a href="/logout">Выход</a>
-      <p>{{ name }}</p>
-    </nav>
-  </header>
+{% extends "base.html" %}
 
+
+{% block content % }
   <main>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -119,5 +102,4 @@
   </aside>
 
   <!-- Чат-бота на главной НЕТ по требованию -->
-</body>
-</html>
+{% endblock % }
